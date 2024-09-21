@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+   font-family: 'Poppins',cursive;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   color: azure;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: black;
+   overflow: hidden;
+}
+
+.greetings{
+    font-size: 6rem;
+    font-weight: 900;
+}
+
+.greetings > span{
+   display: inline-block;
+   animation: glow 2.5s ease-in-out infinite;
+   opacity: 0;
+   transform: translateY(50px);
+   transition: opacity 0.5s, transform 0.5s;
+}
+
+@keyframes glow {
+   0%, 100% {
+      color: #fff;
+      text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
+   }
+   10%, 90% {
+      color: #696565;
+      text-shadow: none;
+   }
+}
+
+.description {
+   font-size: 1.5rem;
+   margin: 20px 0;
+   color: #fbff00;
+   text-align: center;
+}
+
+.button button {
+   background-color: yellow;
+   border: none;
+   padding: 10px 20px;
+   font-size: 18px;
+   cursor: pointer;
+   border-radius: 20px;
+   transition: all 0.3s ease-in-out;
+   position: relative;
+   overflow: hidden;
+}
+
+.button button:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+   );
+   transition: all 0.5s;
+}
+
+.button button:hover:before {
+   left: 100%;
+}
+
+.button button:hover {
+   background-color: orange;
+   box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+}
+
+.button button a {
+   text-decoration: none;
+   color: black;
+}
+
+#particles-js {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+}
+
+@media screen and (max-width: 574px) {
+   .greetings {
+      font-size: 3rem;
+   }
+   .description {
+      font-size: 1rem;
+   }
+   .button button {
+      font-size: 14px;
+   }
+}
+
+/* Estilo para el botón 
+.button button {
+    background-color: yellow; /* Fondo amarillo
+    border: none; /* Sin bordes 
+    padding: 10px 20px; /* Ajusta el relleno según tu preferencia 
+    font-size: 18px; /* Tamaño de fuente 
+    cursor: pointer;
+    position: relative; /* Necesario para el resplandor
+    border-radius: 20px; /* Esquinas redondeadas
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo
+  }
+*/
+  
+  /* Estilo para el enlace dentro del botón
+  .button button a {
+    text-decoration: none; /* Elimina el subrayado del enlace
+    color: inherit; /* Hereda el color del texto del botón
+  }
+*/
+  
+  /* Efecto de resplandor al pasar el cursor sobre el botón
+  .button button:hover {
+    background-color: orange; /* Cambia el color de fondo al pasar el mouse a naranja
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Efecto de resplandor amarillo
+  }
+*/
